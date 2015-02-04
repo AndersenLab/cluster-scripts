@@ -2,6 +2,9 @@
 __pycache__/
 *.py[cod]
 
+# Constants file
+constants.sh
+
 # C extensions
 *.so
 
