@@ -4,6 +4,11 @@
 #PBS -V
 #PBS -N bamsurgeon
 
+#
+# Inputs:
+# 		- n = varset number
+#
+
 source setup.sh
 
 export OMP_NUM_THREADS=12
