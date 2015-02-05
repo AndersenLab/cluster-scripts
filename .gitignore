@@ -3,7 +3,7 @@ __pycache__/
 *.py[cod]
 
 # Constants file
-constants.sh
+setup.sh
 
 # C extensions
 *.so
