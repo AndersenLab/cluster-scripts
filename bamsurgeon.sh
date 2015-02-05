@@ -1,6 +1,7 @@
 #!/bin/bash
 #PBS -l nodes=1:ppn=12
 #PBS -l walltime=12:00:00
+#PBS -A hpt-060-aa
 #PBS -V
 #PBS -N bamsurgeon
 
@@ -9,7 +10,7 @@
 # 		- n = varset number
 #
 
-source setup.sh
+cd $working_dir
 
 export OMP_NUM_THREADS=12
 
