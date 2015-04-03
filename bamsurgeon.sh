@@ -1,6 +1,6 @@
 #!/bin/bash
-#PBS -l nodes=1:ppn=12
-#PBS -l walltime=12:00:00
+#PBS -l nodes=1:ppn=16
+#PBS -l walltime=40:00:00
 #PBS -A hpt-060-aa
 #PBS -V
 #PBS -N bamsurgeon
@@ -12,7 +12,7 @@
 
 cd $working_dir
 
-export OMP_NUM_THREADS=12
+export OMP_NUM_THREADS=16
 
 varset=$varset_dir/varset${n}.bed
 bamfile=N2.bam
@@ -30,3 +30,9 @@ then
 else
    echo "File $sorted_bam or $sorted_bam.bai does not exist."
 fi
+
+# Collect stats on complete File
+cd addsnv_logs_$outbam
+for f in `find . -maxdepth 1 -name "*.log"`; do
+	cat $f | egrep '(^snv)' >> ../bamsurgeon_varfiles/snv_log_${outbam/.bam/}.log
+done;

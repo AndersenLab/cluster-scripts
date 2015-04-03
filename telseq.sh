@@ -1,16 +1,16 @@
 #!/bin/bash
 #PBS -l nodes=1:ppn=1
-#PBS -l walltime=30:00:00
+#PBS -l walltime=60:00:00
 #PBS -A hpt-060-aa
 #PBS -V
 #PBS -N telseq
 
-cd /gs/scratch/mzamanian/NU
+cd $working_dir
 
 export OMP_NUM_THREADS=1
 export PATH=$PATH:/sb/project/hpt-060-aa/telseq/src/Telseq
 
-#telseq -z 'TTAGGC' $file.bam -o $file.telseq_elegans.TTAGGC.txt
+telseq -z 'TTAGGG' $file.bam -o $file.telseq_elegans.TTAGGG.txt
 
 #telseq -z 'GTATGC' $file.bam -o $file.telseq.GTATGC.txt
 #telseq -z 'GTCTAG' $file.bam -o $file.telseq.GTCTAG.txt
@@ -25,6 +25,6 @@ export PATH=$PATH:/sb/project/hpt-060-aa/telseq/src/Telseq
 #telseq -z 'TGTGAC' $file.bam -o $file.telseq.TGTGAC.txt
 
 #telseq -z 'TTAGGC' -u $file.bam -o $file.telseq_elegans.TTAGGC.noreadgroup.txt
-telseq -z 'GTCTAG' -u $file.bam -o $file.telseq_elegans.GTCTAG.noreadgroup.txt
+#telseq -z 'GTCTAG' -u $file.bam -o $file.telseq_elegans.GTCTAG.noreadgroup.txt
 
 
